@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    --main-color: #4855CD;
+    --hover-color: #333d92;
+    --note-background: #dddff5;
+}
+
+h1 {
+    color: var(--main-color);
+    font-size: 60px;
+    font-family: "Sankofa Display", sans-serif;
+    font-weight: 900;
+    padding: 10px;
+}
+
+h1 i {
+    font-size: 40px;
+    height: 12vh;
+}
+
+/* Start BottomDiv */
+
+#bottomDiv {
+    height: 12vh;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#bottomDiv .userDiv, #bottomDiv .settingsDiv {
+    width: 50%;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    border: 1px solid;
+    transition: 0.5s;
+}
+
+#bottomDiv .userDiv:hover, #bottomDiv .settingsDiv:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
+}
+
+/* End BottomDiv */
+
+/* Start Add Button */
+
+#addButton {
+    position: fixed;
+    right: 20px;
+    bottom: 15vh;
+}
+
+#addButton i {
+    color: var(--main-color);
+    font-size: 60px;
+    transition: 0.5s;
+}
+
+#addButton i:hover {
+    cursor: pointer;
+    color: var(--hover-color);
+}
+
+/* End Add Button  */
+
+/* Start Notes */
+
+#notes {
+    display: none;
+}
+
+#notes div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--note-background);
+    border-bottom: 2px solid var(--main-color);
+}
+
+#notes div p {
+    font-size: 22px;
+    margin: 0;
+}
+
+#notes div i {
+    font-size: 22px;
+    color: var(--hover-color);
+}
+
+/* End Notes */
+
+/* Start Zero Notes */
+
+#zeroNotes {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#zeroNotes div {
+    text-align: center;
+}
+
+#zeroNotes div img {
+    width: 60%;
+}
+
+#zeroNotes div p {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--hover-color);
+}
+
+/* End Zero Notes */
