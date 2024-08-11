@@ -22,6 +22,14 @@ h1 i {
     height: 12vh;
 }
 
+textarea {
+    width: 100%;
+    resize: none;
+    outline-color: var(--main-color);
+    font-size: 25px;
+    padding: 10px;
+}
+
 /* Start BottomDiv */
 
 #bottomDiv {
@@ -124,3 +132,4 @@ h1 i {
 }
 
 /* End Zero Notes */
+
