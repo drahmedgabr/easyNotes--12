@@ -24,7 +24,7 @@
 
     </div>
     <div id="bottomDiv">
-        <div class="userDiv">
+        <div class="userDiv" onclick="showLogin()">
             <i class="bi bi-person-fill"></i>
         </div>
         <div class="settingsDiv">
@@ -70,6 +70,56 @@
   </div>
 
     <!-- End Modal -->
+
+  <!-- Start Login -->
+
+  <div id="loginDiv">
+    <div id="buttonsDiv">
+      <h3>Please login to get your data</h3>
+      <br>
+      <button class="btn btn-success btn-lg" onclick="showLoginInput()">Login</button>
+      <br><br>
+      <button class="btn btn-primary btn-lg" onclick="showSignupInput()">Signup</button>
+    </div>
+    <div id="loginInput">
+      <input type="email" placeholder="email" id="emailLoginInput">
+      <br><br>
+      <input type="password" placeholder="password" id="passwordLoginInput">
+      <br><br>
+      <button class="btn btn-primary btn-lg" onclick="login()">Login</button>
+    </div>
+    <div id="signupInput">
+      <input type="email" placeholder="email" id="emailSignupInput">
+      <br><br>
+      <input type="password" placeholder="password" id="passwordSignupInput">
+      <br><br>
+      <input type="text" placeholder="name" id="nameInput">
+      <br><br>
+      <button class="btn btn-primary btn-lg">SignUp</button>
+    </div>
+  </div>
+
+  <!-- End Login -->
+
+  <!-- Start Account Div -->
+
+  <div id="accountDiv">
+    <div>
+      <h3>Welcome <span id="accountName"></span></h3>
+      <br>
+      <hr>
+      <br>
+      <button class="btn btn-success btn-lg" onclick="">Download Notes</button>
+      <br><br>
+      <hr>  
+      <br>
+      <button class="btn btn-primary btn-lg" onclick="">Upload Notes</button>
+      <br>
+    </div>
+  </div>
+
+  <!-- End Account Div -->
+
 
 </body>
 </html>

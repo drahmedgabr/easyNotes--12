@@ -133,3 +133,57 @@ textarea {
 
 /* End Zero Notes */
 
+/* Start Login */
+
+#loginDiv {
+    height: 75vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginDiv #buttonsDiv {
+    text-align: center;
+}
+
+#loginDiv #buttonsDiv button {
+    width: 70%;
+}
+
+#loginDiv #loginInput {
+    display: none;
+    text-align: center;
+}
+
+#loginDiv #signupInput {
+    display: none;
+    text-align: center;
+}
+
+
+
+#loginDiv input {
+    width: 90%;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+
+
+/* End Login */
+
+#accountDiv {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+#accountDiv div {
+    width: 60%;
+    text-align: center;
+    border: 2px solid grey;
+    padding: 20px;
+    border-radius: 20px;
+}
+

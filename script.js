@@ -1,6 +1,22 @@
 const textArea = document.getElementById("newNote");
 const notesDiv = document.getElementById("notes");
 const zeroNotes = document.getElementById("zeroNotes");
+const loginInput = document.getElementById("loginInput");
+const signupInput = document.getElementById("signupInput");
+const buttonsDiv = document.getElementById("buttonsDiv");
+const loginDiv = document.getElementById("loginDiv");
+const emailLoginInput = document.getElementById("emailLoginInput");
+const passwordLoginInput = document.getElementById("passwordLoginInput");
+const emailSignupInput = document.getElementById("emailSignupInput");
+const passwordSignupInput = document.getElementById("passwordSignupInput");
+const nameInput = document.getElementById("nameInput");
+const accountDiv = document.getElementById("accountDiv");
+const accountName = document.getElementById("accountName");
+
+
+
+
+
 
 
 var notesArray = [];
@@ -75,5 +91,61 @@ function deleteNote(index) {
     notesArray.splice(index, 1);
     saveNotes();
 }
+
+function showLoginInput() {
+    loginInput.style.display = "block";
+    buttonsDiv.style.display = "none";
+}
+
+function showSignupInput() {
+    signupInput.style.display = "block";
+    buttonsDiv.style.display = "none";
+}
+
+function showLogin() {
+
+    const userName = localStorage.getItem("userName");
+    const userId = localStorage.getItem("userId");
+
+    if(userId == null) {
+        loginDiv.style.display = "flex";
+        zeroNotes.style.display = "none";
+        notesDiv.style.display = "none";
+    } else {
+        accountDiv.style.display = "flex";
+        zeroNotes.style.display = "none";
+        notesDiv.style.display = "none";
+        accountName.innerText = userName;
+    }
+}
+
+
+async function login() {
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/login?email=${emailLoginInput.value}&password=${passwordLoginInput.value}`;
+
+    const response = await fetch(apiUrl);
+
+    const data = await response.json();
+
+    console.log(data);
+    
+
+    const status = data.status;
+
+    if(status == true){
+        const userName = data.name;
+        const userId = data.id;
+
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("userId", userId);
+
+        location.reload();
+
+    } else {
+        alert("login failed");
+    }
+    
+}
+
 
 getNotesFromStorage();
