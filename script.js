@@ -14,12 +14,11 @@ const accountDiv = document.getElementById("accountDiv");
 const accountName = document.getElementById("accountName");
 
 
-
-
-
-
-
 var notesArray = [];
+var userId = "";
+
+
+
 
 function addNote() {
     const newNote = textArea.value;
@@ -105,7 +104,7 @@ function showSignupInput() {
 function showLogin() {
 
     const userName = localStorage.getItem("userName");
-    const userId = localStorage.getItem("userId");
+    userId = localStorage.getItem("userId");
 
     if(userId == null) {
         loginDiv.style.display = "flex";
@@ -145,6 +144,46 @@ async function login() {
         alert("login failed");
     }
     
+}
+
+async function uploadNotes() {
+
+    if (notesArray.length == 0) {
+        alert("You have no notes to upload");
+    } else {
+        const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/addnote?id=${userId}&notes=${JSON.stringify(notesArray)}`;
+
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const status = data.status;
+        if(status == true){
+            alert("Notes uploaded successfully");
+        } else {
+            alert("Notes upload failed");
+        }
+    }
+}
+
+async function downloadNotes() {
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/getnotes?id=${userId}`;
+
+    
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    const status = data.status;
+    if(status == true){
+        const notes = data.notes;
+        const downloadedNotes = JSON.parse(notes);
+        if(downloadedNotes.length > 0){
+            notesArray = downloadedNotes;
+            saveNotes();
+            alert("Notes downloaded successfully");
+        } else {
+            alert("No notes found online");
+        }
+    } else {
+        alert("Notes download failed");
+    }
 }
 
 
