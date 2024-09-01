@@ -85,6 +85,7 @@ textarea {
 
 #notes {
     display: none;
+    padding-bottom: 15vh;
 }
 
 #notes div {
@@ -176,7 +177,8 @@ textarea {
     display: none;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    min-height: 75vh;
+    padding-bottom: 15vh;
 }
 
 #accountDiv div {
@@ -187,3 +189,61 @@ textarea {
     border-radius: 20px;
 }
 
+#sideDiv {
+    width: 20%;
+    position: fixed;
+    left: 30px;
+    top: 15vh;
+    display: none;
+}
+
+#sideDiv div {
+    height: 300px;
+    background-color: var(--main-color);
+    color: white;
+    margin-bottom: 50px;
+}
+
+
+@media (min-width: 1200px) {
+    
+    #notes {
+        width: 600px;
+        margin: auto;
+        padding-bottom: 0;
+    }
+
+    #notes div {
+        border: 2px solid var(--main-color);
+        margin-bottom: 30px;
+        padding: 30px;
+        border-radius: 10px 20px;
+    }
+
+    #bottomDiv {
+        position: fixed;
+        width: 10%;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        align-items: flex-end;
+        height: 20vh;
+    }
+
+    #bottomDiv .userDiv, #bottomDiv .settingsDiv {
+        height: 50%;
+    }
+
+    #sideDiv {
+        display: block;
+    }
+
+    #accountDiv {
+        width: 600px;
+        margin: auto;
+        padding-bottom: 0;
+    }
+
+
+}

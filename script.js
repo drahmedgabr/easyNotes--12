@@ -34,7 +34,7 @@ function addNote() {
 function saveNotes() {
     const notes = JSON.stringify(notesArray);
     localStorage.setItem("notes", notes);
-    getNotesFromStorage();
+    showHome();
 }
 
 function getNotesFromStorage() {
@@ -184,6 +184,21 @@ async function downloadNotes() {
     } else {
         alert("Notes download failed");
     }
+}
+
+function showHome() {
+    loginDiv.style.display = "none";
+    accountDiv.style.display = "none";
+    loginInput.style.display = "none";
+    signupInput.style.display = "none";
+    buttonsDiv.style.display = "block";
+    getNotesFromStorage();
+}
+
+function signOut() {
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userName");
+    showHome();
 }
 
 

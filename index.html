@@ -24,11 +24,11 @@
 
     </div>
     <div id="bottomDiv">
+        <div class="settingsDiv" onclick="showHome()">
+          <i class="bi bi-house-door-fill"></i>
+        </div>
         <div class="userDiv" onclick="showLogin()">
             <i class="bi bi-person-fill"></i>
-        </div>
-        <div class="settingsDiv">
-            <i class="bi bi-gear-fill"></i>
         </div>
     </div>
     <div id="addButton" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -114,11 +114,23 @@
       <hr>  
       <br>
       <button class="btn btn-primary btn-lg" onclick="uploadNotes()">Upload Notes</button>
+      <br><br>
+      <hr>
       <br>
+      <button class="btn btn-primary btn-lg" onclick="signOut()">Sign out</button>
     </div>
   </div>
 
   <!-- End Account Div -->
+
+  <div id="sideDiv">
+    <div>
+      ADS
+    </div>
+    <div>
+      ADS
+    </div>
+  </div>
 
 
 </body>
